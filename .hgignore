@@ -9,3 +9,6 @@ libtool
 .libs
 SDL_image.pc
 SDL_image.spec
+.DS_Store
+**/xcuserdata/
+
