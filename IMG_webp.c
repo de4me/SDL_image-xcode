@@ -37,7 +37,11 @@
 
 =============================================================================*/
 
+#ifndef SDL_FRAMEWORK
 #include "SDL_endian.h"
+#else
+#include <SDL/SDL_endian.h>
+#endif
 
 #ifdef macintosh
 #define MACOS

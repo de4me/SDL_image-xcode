@@ -26,7 +26,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+#ifndef SDL_FRAMEWORK
 #include "SDL_endian.h"
+#else
+#include <SDL/SDL_endian.h>
+#endif
 #include "SDL_image.h"
 
 #ifdef LOAD_XCF

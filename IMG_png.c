@@ -32,7 +32,11 @@
 
 /* This code was originally written by Philippe Lavoie (2 November 1998) */
 
+#ifndef SDL_FRAMEWORK
 #include "SDL_endian.h"
+#else
+#include <SDL/SDL_endian.h>
+#endif
 
 #ifdef macintosh
 #define MACOS

@@ -86,9 +86,15 @@ int IMG_isCUR(SDL_RWops *src)
 	return IMG_isICOCUR(src, 2);
 }
 
+#ifndef SDL_FRAMEWORK
 #include "SDL_error.h"
 #include "SDL_video.h"
 #include "SDL_endian.h"
+#else
+#include <SDL/SDL_error.h>
+#include <SDL/SDL_video.h>
+#include <SDL/SDL_endian.h>
+#endif
 
 /* Compression encodings for BMP files */
 #ifndef BI_RGB

@@ -23,7 +23,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifndef SDL_FRAMEWORK
 #include "SDL.h"
+#else
+#include <SDL/SDL.h>
+#endif
 #include "SDL_image.h"
 
 /* #define XPM_INCLUDED and supply picture.xpm to test the XPM inclusion

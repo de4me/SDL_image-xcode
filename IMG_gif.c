@@ -77,7 +77,11 @@ int IMG_isGIF(SDL_RWops *src)
    Use SDL_Surface rather than xpaint Image structure
    Define SDL versions of RWSetMsg(), ImageNewCmap() and ImageSetCmap()
 */
+#ifndef SDL_FRAMEWORK
 #include "SDL.h"
+#else
+#include <SDL/SDL.h>
+#endif
 
 #define Image			SDL_Surface
 #define RWSetMsg		IMG_SetError
