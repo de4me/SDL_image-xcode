@@ -90,10 +90,9 @@
 		08FB77ACFE841707C02AAC07 /* Library Source */ = {
 			isa = PBXGroup;
 			children = (
-				00A624FD12F4E99800577F68 /* IMG_ImageIO.m */,
-				3BB4C058012FAC847F000001 /* IMG.c */,
 				3BB4C059012FAC847F000001 /* IMG_bmp.c */,
 				3BB4C05A012FAC847F000001 /* IMG_gif.c */,
+				00A624FD12F4E99800577F68 /* IMG_ImageIO.m */,
 				3BB4C05B012FAC847F000001 /* IMG_jpg.c */,
 				F5FB1F0001CD818601FAFB42 /* IMG_lbm.c */,
 				3BB4C05C012FAC847F000001 /* IMG_pcx.c */,
@@ -106,6 +105,7 @@
 				3BB4C062012FAC847F000001 /* IMG_xpm.c */,
 				005DF5E70A140CA2006B0BD5 /* IMG_xv.c */,
 				B2D7A06503FAB42200A8000A /* IMG_xxx.c */,
+				3BB4C058012FAC847F000001 /* IMG.c */,
 			);
 			name = "Library Source";
 			sourceTree = "<group>";
@@ -148,6 +148,8 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = 00B7E3B6097EB73D00826121 /* Build configuration list for PBXProject "SDL_image" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;

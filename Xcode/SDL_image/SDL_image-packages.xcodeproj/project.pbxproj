@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD7EDA1C2AC5E039001A582D /* IMG_jpg.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA092AC5E039001A582D /* IMG_jpg.c */; };
+		BD7EDA1D2AC5E039001A582D /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA0A2AC5E039001A582D /* IMG_xxx.c */; };
+		BD7EDA1F2AC5E039001A582D /* IMG_pnm.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA0C2AC5E039001A582D /* IMG_pnm.c */; };
+		BD7EDA202AC5E039001A582D /* IMG_png.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA0D2AC5E039001A582D /* IMG_png.c */; };
+		BD7EDA212AC5E039001A582D /* IMG_webp.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA0E2AC5E039001A582D /* IMG_webp.c */; };
+		BD7EDA222AC5E039001A582D /* IMG_tga.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA0F2AC5E039001A582D /* IMG_tga.c */; };
+		BD7EDA232AC5E039001A582D /* IMG_xcf.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA102AC5E039001A582D /* IMG_xcf.c */; };
+		BD7EDA242AC5E039001A582D /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA112AC5E039001A582D /* IMG_xpm.c */; };
+		BD7EDA252AC5E039001A582D /* IMG_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA122AC5E039001A582D /* IMG_bmp.c */; };
+		BD7EDA262AC5E039001A582D /* SDL_image.h in Headers */ = {isa = PBXBuildFile; fileRef = BD7EDA132AC5E039001A582D /* SDL_image.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD7EDA272AC5E039001A582D /* IMG_lbm.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA142AC5E039001A582D /* IMG_lbm.c */; };
+		BD7EDA282AC5E039001A582D /* IMG_ImageIO.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA152AC5E039001A582D /* IMG_ImageIO.m */; };
+		BD7EDA292AC5E039001A582D /* IMG_gif.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA162AC5E039001A582D /* IMG_gif.c */; };
+		BD7EDA2A2AC5E039001A582D /* IMG_xv.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA172AC5E039001A582D /* IMG_xv.c */; };
+		BD7EDA2B2AC5E039001A582D /* IMG_tif.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA182AC5E039001A582D /* IMG_tif.c */; };
+		BD7EDA2D2AC5E039001A582D /* IMG.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA1A2AC5E039001A582D /* IMG.c */; };
+		BD7EDA2E2AC5E039001A582D /* IMG_pcx.c in Sources */ = {isa = PBXBuildFile; fileRef = BD7EDA1B2AC5E039001A582D /* IMG_pcx.c */; };
+		BDF95E752B659684003D83FE /* SDL in Frameworks */ = {isa = PBXBuildFile; productRef = BDF95E742B659684003D83FE /* SDL */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BD12F09F2AC5DDBD001AE4BA /* SDL_image.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDL_image.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD12F0A32AC5DDBD001AE4BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD7EDA092AC5E039001A582D /* IMG_jpg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_jpg.c; path = ../../../IMG_jpg.c; sourceTree = "<group>"; };
+		BD7EDA0A2AC5E039001A582D /* IMG_xxx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_xxx.c; path = ../../../IMG_xxx.c; sourceTree = "<group>"; };
+		BD7EDA0B2AC5E039001A582D /* showimage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = showimage.c; path = ../../../showimage.c; sourceTree = "<group>"; };
+		BD7EDA0C2AC5E039001A582D /* IMG_pnm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_pnm.c; path = ../../../IMG_pnm.c; sourceTree = "<group>"; };
+		BD7EDA0D2AC5E039001A582D /* IMG_png.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_png.c; path = ../../../IMG_png.c; sourceTree = "<group>"; };
+		BD7EDA0E2AC5E039001A582D /* IMG_webp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_webp.c; path = ../../../IMG_webp.c; sourceTree = "<group>"; };
+		BD7EDA0F2AC5E039001A582D /* IMG_tga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_tga.c; path = ../../../IMG_tga.c; sourceTree = "<group>"; };
+		BD7EDA102AC5E039001A582D /* IMG_xcf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_xcf.c; path = ../../../IMG_xcf.c; sourceTree = "<group>"; };
+		BD7EDA112AC5E039001A582D /* IMG_xpm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_xpm.c; path = ../../../IMG_xpm.c; sourceTree = "<group>"; };
+		BD7EDA122AC5E039001A582D /* IMG_bmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_bmp.c; path = ../../../IMG_bmp.c; sourceTree = "<group>"; };
+		BD7EDA132AC5E039001A582D /* SDL_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDL_image.h; path = ../../../SDL_image.h; sourceTree = "<group>"; };
+		BD7EDA142AC5E039001A582D /* IMG_lbm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_lbm.c; path = ../../../IMG_lbm.c; sourceTree = "<group>"; };
+		BD7EDA152AC5E039001A582D /* IMG_ImageIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMG_ImageIO.m; path = ../../../IMG_ImageIO.m; sourceTree = "<group>"; };
+		BD7EDA162AC5E039001A582D /* IMG_gif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_gif.c; path = ../../../IMG_gif.c; sourceTree = "<group>"; };
+		BD7EDA172AC5E039001A582D /* IMG_xv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_xv.c; path = ../../../IMG_xv.c; sourceTree = "<group>"; };
+		BD7EDA182AC5E039001A582D /* IMG_tif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_tif.c; path = ../../../IMG_tif.c; sourceTree = "<group>"; };
+		BD7EDA192AC5E039001A582D /* IMG_UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IMG_UIImage.m; path = ../../../IMG_UIImage.m; sourceTree = "<group>"; };
+		BD7EDA1A2AC5E039001A582D /* IMG.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG.c; path = ../../../IMG.c; sourceTree = "<group>"; };
+		BD7EDA1B2AC5E039001A582D /* IMG_pcx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_pcx.c; path = ../../../IMG_pcx.c; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD12F09C2AC5DDBD001AE4BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BDF95E752B659684003D83FE /* SDL in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD12F0952AC5DDBD001AE4BA = {
+			isa = PBXGroup;
+			children = (
+				BD12F0A12AC5DDBD001AE4BA /* SDL_image */,
+				BD12F0A02AC5DDBD001AE4BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD12F0A02AC5DDBD001AE4BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD12F09F2AC5DDBD001AE4BA /* SDL_image.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD12F0A12AC5DDBD001AE4BA /* SDL_image */ = {
+			isa = PBXGroup;
+			children = (
+				BD7EDA082AC5DFBC001A582D /* src */,
+				BD12F0A32AC5DDBD001AE4BA /* Info.plist */,
+			);
+			path = SDL_image;
+			sourceTree = "<group>";
+		};
+		BD7EDA082AC5DFBC001A582D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BD7EDA122AC5E039001A582D /* IMG_bmp.c */,
+				BD7EDA162AC5E039001A582D /* IMG_gif.c */,
+				BD7EDA152AC5E039001A582D /* IMG_ImageIO.m */,
+				BD7EDA092AC5E039001A582D /* IMG_jpg.c */,
+				BD7EDA142AC5E039001A582D /* IMG_lbm.c */,
+				BD7EDA1B2AC5E039001A582D /* IMG_pcx.c */,
+				BD7EDA0D2AC5E039001A582D /* IMG_png.c */,
+				BD7EDA0C2AC5E039001A582D /* IMG_pnm.c */,
+				BD7EDA0F2AC5E039001A582D /* IMG_tga.c */,
+				BD7EDA182AC5E039001A582D /* IMG_tif.c */,
+				BD7EDA192AC5E039001A582D /* IMG_UIImage.m */,
+				BD7EDA0E2AC5E039001A582D /* IMG_webp.c */,
+				BD7EDA102AC5E039001A582D /* IMG_xcf.c */,
+				BD7EDA112AC5E039001A582D /* IMG_xpm.c */,
+				BD7EDA172AC5E039001A582D /* IMG_xv.c */,
+				BD7EDA0A2AC5E039001A582D /* IMG_xxx.c */,
+				BD7EDA1A2AC5E039001A582D /* IMG.c */,
+				BD7EDA132AC5E039001A582D /* SDL_image.h */,
+				BD7EDA0B2AC5E039001A582D /* showimage.c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BD12F09A2AC5DDBD001AE4BA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD7EDA262AC5E039001A582D /* SDL_image.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		BD12F09E2AC5DDBD001AE4BA /* SDL_image */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD12F0A72AC5DDBD001AE4BA /* Build configuration list for PBXNativeTarget "SDL_image" */;
+			buildPhases = (
+				BD12F09A2AC5DDBD001AE4BA /* Headers */,
+				BD12F09B2AC5DDBD001AE4BA /* Sources */,
+				BD12F09C2AC5DDBD001AE4BA /* Frameworks */,
+				BD12F09D2AC5DDBD001AE4BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDL_image;
+			packageProductDependencies = (
+				BDF95E742B659684003D83FE /* SDL */,
+			);
+			productName = SDL_image;
+			productReference = BD12F09F2AC5DDBD001AE4BA /* SDL_image.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD12F0962AC5DDBD001AE4BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					BD12F09E2AC5DDBD001AE4BA = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = BD12F0992AC5DDBD001AE4BA /* Build configuration list for PBXProject "SDL_image-packages" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD12F0952AC5DDBD001AE4BA;
+			packageReferences = (
+				BDF95E732B659684003D83FE /* XCRemoteSwiftPackageReference "SDL-package" */,
+			);
+			productRefGroup = BD12F0A02AC5DDBD001AE4BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD12F09E2AC5DDBD001AE4BA /* SDL_image */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD12F09D2AC5DDBD001AE4BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD12F09B2AC5DDBD001AE4BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD7EDA1D2AC5E039001A582D /* IMG_xxx.c in Sources */,
+				BD7EDA212AC5E039001A582D /* IMG_webp.c in Sources */,
+				BD7EDA1F2AC5E039001A582D /* IMG_pnm.c in Sources */,
+				BD7EDA2A2AC5E039001A582D /* IMG_xv.c in Sources */,
+				BD7EDA282AC5E039001A582D /* IMG_ImageIO.m in Sources */,
+				BD7EDA2D2AC5E039001A582D /* IMG.c in Sources */,
+				BD7EDA272AC5E039001A582D /* IMG_lbm.c in Sources */,
+				BD7EDA202AC5E039001A582D /* IMG_png.c in Sources */,
+				BD7EDA2B2AC5E039001A582D /* IMG_tif.c in Sources */,
+				BD7EDA242AC5E039001A582D /* IMG_xpm.c in Sources */,
+				BD7EDA1C2AC5E039001A582D /* IMG_jpg.c in Sources */,
+				BD7EDA292AC5E039001A582D /* IMG_gif.c in Sources */,
+				BD7EDA2E2AC5E039001A582D /* IMG_pcx.c in Sources */,
+				BD7EDA222AC5E039001A582D /* IMG_tga.c in Sources */,
+				BD7EDA232AC5E039001A582D /* IMG_xcf.c in Sources */,
+				BD7EDA252AC5E039001A582D /* IMG_bmp.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		BD12F0A52AC5DDBD001AE4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 9.4;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(SDL_IMAGE_PREPROCESSOR_MACROS)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(LOCAL_LIBRARY_DIR)/Frameworks/SDL.framework/Headers";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SDL_IMAGE_PREPROCESSOR_MACROS = "SDL_FRAMEWORK LOAD_BMP=1 LOAD_GIF=1 LOAD_LBM=1 LOAD_PCX=1 LOAD_PNM=1 LOAD_TGA=1 LOAD_XCF=1 LOAD_XPM=1 LOAD_XV=1 LOAD_TIF=1 LOAD_PNG=1 LOAD_JPG=1 STDC_HEADERS=1 HAVE_SYS_TYPES_H=1 HAVE_SYS_STAT_H=1 HAVE_STDLIB_H=1 HAVE_STRING_H=1 HAVE_MEMORY_H=1 HAVE_STRINGS_H=1 HAVE_INTTYPES_H=1 HAVE_STDINT_H=1 HAVE_UNISTD_H=1 HAVE_DLFCN_H=1 _GNU_SOURCE=1 _THREAD_SAFE";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BD12F0A62AC5DDBD001AE4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = NO;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 9.4;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(SDL_IMAGE_PREPROCESSOR_MACROS)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(LOCAL_LIBRARY_DIR)/Frameworks/SDL.framework/Headers";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SDL_IMAGE_PREPROCESSOR_MACROS = "SDL_FRAMEWORK LOAD_BMP=1 LOAD_GIF=1 LOAD_LBM=1 LOAD_PCX=1 LOAD_PNM=1 LOAD_TGA=1 LOAD_XCF=1 LOAD_XPM=1 LOAD_XV=1 LOAD_TIF=1 LOAD_PNG=1 LOAD_JPG=1 STDC_HEADERS=1 HAVE_SYS_TYPES_H=1 HAVE_SYS_STAT_H=1 HAVE_STDLIB_H=1 HAVE_STRING_H=1 HAVE_MEMORY_H=1 HAVE_STRINGS_H=1 HAVE_INTTYPES_H=1 HAVE_STDINT_H=1 HAVE_UNISTD_H=1 HAVE_DLFCN_H=1 _GNU_SOURCE=1 _THREAD_SAFE";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BD12F0A82AC5DDBD001AE4BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
+				COPY_HEADERS_UNIFDEF_FLAGS = "-DSDL_FRAMEWORK";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SDL_image/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = SDL_image/SDL_image.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL-image";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		BD12F0A92AC5DDBD001AE4BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_HEADERS_RUN_UNIFDEF = YES;
+				COPY_HEADERS_UNIFDEF_FLAGS = "-DSDL_FRAMEWORK";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SDL_image/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = SDL_image/SDL_image.modulemap;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libsdl.SDL-image";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD12F0992AC5DDBD001AE4BA /* Build configuration list for PBXProject "SDL_image-packages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD12F0A52AC5DDBD001AE4BA /* Debug */,
+				BD12F0A62AC5DDBD001AE4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD12F0A72AC5DDBD001AE4BA /* Build configuration list for PBXNativeTarget "SDL_image" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD12F0A82AC5DDBD001AE4BA /* Debug */,
+				BD12F0A92AC5DDBD001AE4BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BDF95E732B659684003D83FE /* XCRemoteSwiftPackageReference "SDL-package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/de4me/SDL-package";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.15;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BDF95E742B659684003D83FE /* SDL */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDF95E732B659684003D83FE /* XCRemoteSwiftPackageReference "SDL-package" */;
+			productName = SDL;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = BD12F0962AC5DDBD001AE4BA /* Project object */;
+}

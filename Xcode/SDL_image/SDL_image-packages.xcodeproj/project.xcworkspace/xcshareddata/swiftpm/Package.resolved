@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "sdl-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/de4me/SDL-package",
+      "state" : {
+        "revision" : "e36dcd48bb012ab520dd80d5d7c8945c4df3fba8",
+        "version" : "1.2.15"
+      }
+    }
+  ],
+  "version" : 2
+}

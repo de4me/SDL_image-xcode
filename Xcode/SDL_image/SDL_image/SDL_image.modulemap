@@ -1,0 +1,9 @@
+
+framework module SDL_image [system] [extern_c] {
+
+  umbrella header "SDL_image.h"
+
+  export *
+  module * { export * }
+
+}
