@@ -349,7 +349,7 @@ struct loadpng_vars {
 	png_bytep *row_pointers;
 };
 
-static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
+static SDL_bool LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 {
 	png_uint_32 width, height;
 	int bit_depth, color_type, interlace_type, num_channels;
@@ -367,14 +367,14 @@ static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 					  NULL,NULL,NULL);
 	if (vars->png_ptr == NULL) {
 		vars->error = "Couldn't allocate memory for PNG file or incompatible PNG dll";
-		return;
+		return SDL_FALSE;
 	}
 
 	 /* Allocate/initialize the memory for image information.  REQUIRED. */
 	vars->info_ptr = lib.png_create_info_struct(vars->png_ptr);
 	if (vars->info_ptr == NULL) {
 		vars->error = "Couldn't create image information for PNG file";
-		return;
+		return SDL_FALSE;
 	}
 
 	/* Set error handling if you are using setjmp/longjmp method (this is
@@ -388,7 +388,7 @@ static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 #endif
 	{
 		vars->error = "Error reading the PNG file.";
-		return;
+		return SDL_FALSE;
 	}
 
 	/* Set up the input control */
@@ -475,7 +475,7 @@ static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 				bit_depth*num_channels, Rmask,Gmask,Bmask,Amask);
 	if (vars->surface == NULL) {
 		vars->error = "Out of memory";
-		return;
+		return SDL_FALSE;
 	}
 
 	if (ckey != -1) {
@@ -492,7 +492,7 @@ static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 	vars->row_pointers = (png_bytep*) malloc(sizeof(png_bytep)*height);
 	if (vars->row_pointers == NULL) {
 		vars->error = "Out of memory";
-		return;
+		return SDL_FALSE;
 	}
 	for (row = 0; row < (int)height; row++) {
 		vars->row_pointers[row] = (png_bytep)
@@ -532,12 +532,15 @@ static void LIBPNG_LoadPNG_RW(SDL_RWops *src, struct loadpng_vars *vars)
 		}
 	    }
 	}
+
+	return SDL_TRUE;
 }
 
 SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 {
 	int start;
 	struct loadpng_vars vars;
+	SDL_bool success;
 
 	if ( !src ) {
 		/* The error message has been set in SDL_RWFromFile */
@@ -551,7 +554,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 	start = SDL_RWtell(src);
 	memset(&vars, 0, sizeof(vars));
 
-	LIBPNG_LoadPNG_RW(src, &vars);
+	success = LIBPNG_LoadPNG_RW(src, &vars);
 
 	if (vars.png_ptr) {
 		lib.png_destroy_read_struct(&vars.png_ptr,
@@ -561,15 +564,20 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 	if (vars.row_pointers) {
 		free(vars.row_pointers);
 	}
+	if (success) {
+		return vars.surface;
+	}
+
+	SDL_RWseek(src, start, RW_SEEK_SET);
+	if (vars.surface) {
+		SDL_FreeSurface(vars.surface);
+		vars.surface = NULL;
+	}
 	if (vars.error) {
-		SDL_RWseek(src, start, RW_SEEK_SET);
-		if (vars.surface) {
-			SDL_FreeSurface(vars.surface);
-			vars.surface = NULL;
-		}
 		IMG_SetError(vars.error);
 	}
-	return vars.surface;
+
+	return NULL;
 }
 
 #else
