@@ -231,23 +231,25 @@ int IMG_isXCF(SDL_RWops *src)
 	return(is_XCF);
 }
 
-/* SDL-1.2 doesn't have a SDL_RWsize(). sigh... */
-static Sint32 SDLCALL SDL12_RWsize(SDL_RWops *rw) {
-  Sint32 pos, size;
-  if ((pos=SDL_RWtell(rw))<0) return -1;
-  size = SDL_RWseek(rw, 0, RW_SEEK_END);
-  SDL_RWseek(rw, pos, RW_SEEK_SET);
-  return size;
-}
-
 static char * read_string (SDL_RWops * src) {
-  Sint32 remaining;
+  Sint32 remaining, pos;
   Uint32 tmp;
   char * data;
 
   tmp = SDL_ReadBE32 (src);
-  remaining = SDL12_RWsize(src) - SDL_RWtell(src);
-  if (tmp > 0 && tmp <= remaining) {
+  pos = SDL_RWtell (src);
+  remaining = SDL_RWseek(src, 0, RW_SEEK_END) - pos;
+  SDL_RWseek(src, pos, RW_SEEK_SET);
+
+  if (tmp == 0) {
+    data = (char *) malloc(1);
+    if (data) {
+      data[0] = 0;
+    }
+    return data;
+  }
+
+  if ((Sint32)tmp > 0 && (Sint32)tmp <= remaining) {
     data = (char *) malloc (sizeof (char) * tmp);
     if (data) {
       SDL_RWread(src, data, tmp, 1);
@@ -260,11 +262,10 @@ static char * read_string (SDL_RWops * src) {
   return data;
 }
 
-static Uint64 read_offset (SDL_RWops * src, const xcf_header * h) {
-  Uint64 offset;  // starting with version 11, offsets are 64 bits
-  offset = (h->file_version >= 11) ? (Uint64)SDL_ReadBE32 (src) << 32 : 0;
-  offset |= SDL_ReadBE32 (src);
-  return offset;
+static Uint32 read_offset (SDL_RWops * src, const xcf_header * h) {
+//starting with version 11, offsets are 64 bits
+  if (h->file_version >= 11) SDL_ReadBE32 (src);
+  return SDL_ReadBE32 (src);
 }
 
 
@@ -303,8 +304,7 @@ static int xcf_read_property (SDL_RWops * src, xcf_prop * prop) {
   case PROP_COLOR:
     if (prop->length > sizeof(prop->data)) {
       len = sizeof(prop->data);
-    }
-    else {
+    } else {
       len = prop->length;
     }
     SDL_RWread(src, &prop->data, len, 1);
@@ -542,7 +542,7 @@ static unsigned char * load_xcf_tile_none (SDL_RWops * src, Uint32 len, int bpp,
 }
 
 static unsigned char * load_xcf_tile_rle (SDL_RWops * src, Uint32 len, int bpp, int x, int y) {
-  unsigned char * load, * t, * data, * d;
+  unsigned char * load, * t, * data, * data_end, * d;
   int i, size, count, j, length;
   unsigned char val;
 
@@ -551,10 +551,17 @@ static unsigned char * load_xcf_tile_rle (SDL_RWops * src, Uint32 len, int bpp, 
   }
 
   t = load = (unsigned char *) malloc (len);
+  if (load == NULL)
+    return NULL;
 
   SDL_RWread (src, t, 1, len); /* reallen */
 
   data = (unsigned char *) calloc (1, x*y*bpp);
+  if (!data) {
+    free(load);
+    return NULL;
+  }
+  data_end = data + x*y*bpp;
   for (i = 0; i < bpp; i++) {
     d    = data + i;
     size = x*y;
@@ -581,11 +588,13 @@ static unsigned char * load_xcf_tile_rle (SDL_RWops * src, Uint32 len, int bpp, 
 	size -= length;
 
 	while (length-- > 0) {
+	  if (d >= data_end) {
+	    break;
+	  }
 	  *d = *t++;
 	  d += bpp;
 	}
-      }
-      else {
+      } else {
 	length += 1;
 	if (length == 128) {
 	  length = (*t << 8) + t[1];
@@ -594,8 +603,7 @@ static unsigned char * load_xcf_tile_rle (SDL_RWops * src, Uint32 len, int bpp, 
 
 	if (((size_t) (t - load)) >= len) {
 	  break;  /* bogus data */
-	}
-	else if (length > size) {
+	} else if (length > size) {
 	  break;  /* bogus data */
 	}
 
@@ -605,6 +613,9 @@ static unsigned char * load_xcf_tile_rle (SDL_RWops * src, Uint32 len, int bpp, 
 	val = *t++;
 
 	for (j = 0; j < length; j++) {
+	  if (d >= data_end) {
+	    break;
+	  }
 	  *d = val;
 	  d += bpp;
 	}
@@ -659,6 +670,10 @@ do_layer_surface(SDL_Surface * surface, SDL_RWops * src, xcf_header * head, xcf_
 
   SDL_RWseek (src, layer->hierarchy_file_offset, RW_SEEK_SET);
   hierarchy = read_xcf_hierarchy (src, head);
+  if (!hierarchy) {
+    fprintf (stderr, "Failed to read XCF image hierarchy");
+    return 1;
+  }
 
   if (hierarchy->bpp > 4) {  /* unsupported. */
     fprintf (stderr, "Unknown Gimp image bpp (%u)\n", (unsigned int) hierarchy->bpp);
@@ -690,24 +705,32 @@ do_layer_surface(SDL_Surface * surface, SDL_RWops * src, xcf_header * head, xcf_
       if (level->tile_file_offsets [j+1] > level->tile_file_offsets [j]) {
         length = level->tile_file_offsets [j+1] - level->tile_file_offsets [j];
       }
-      tile = load_tile
-             (src,
-              length,
-              hierarchy->bpp,
-              ox, oy);
+      tile = load_tile (src, length, hierarchy->bpp, ox, oy);
 
       if (!tile) {
-        if (hierarchy)
+        if (hierarchy) {
           free_xcf_hierarchy(hierarchy);
-        if (level)
+        }
+        if (level) {
           free_xcf_level(level);
+        }
         return 1;
       }
 
       p8  = tile;
       p   = (Uint32 *) p8;
+
+      /* Bounds check: reject layer if tile data exceeds buffer */
+      if ((Uint64)ox * oy * hierarchy->bpp > (Uint64)(hierarchy->width * hierarchy->height * hierarchy->bpp)) {
+	fprintf (stderr, "Gimp image invalid tile");
+	free_xcf_tile(tile);
+	free_xcf_level(level);
+	free_xcf_hierarchy(hierarchy);
+	return 1;
+      }
+
       for (y=ty; y < ty+oy; y++) {
-	if ((y >= surface->h) || ((tx+ox) > surface->w)) {
+	if ((y >= (Uint32)surface->h) || ((tx+ox) > (Uint32)surface->w)) {
 	  break;
 	}
 	row = (Uint32 *)((Uint8 *)surface->pixels + y*surface->pitch + tx*4);
@@ -725,7 +748,8 @@ do_layer_surface(SDL_Surface * surface, SDL_RWops * src, xcf_header * head, xcf_
 	    row++;
 	  }
 	  break;
-	case 2: // Indexed/Greyscale + Alpha
+	case 2:
+	  /* Indexed/Greyscale + Alpha */
 	  switch (head->image_type) {
 	  case IMAGE_INDEXED:
 	    for (x=tx; x < tx+ox; x++) {
@@ -753,14 +777,16 @@ do_layer_surface(SDL_Surface * surface, SDL_RWops * src, xcf_header * head, xcf_
 	    break;
 	  default:
 	    fprintf (stderr, "Unknown Gimp image type (%d)\n", head->image_type);
-	    if (hierarchy)
+	    if (hierarchy) {
 	      free_xcf_hierarchy(hierarchy);
+	    }
 	    if (level)
 	      free_xcf_level (level);
 	    return 1;
 	  }
 	  break;
-	case 1: // Indexed/Greyscale
+	case 1:
+	  /* Indexed/Greyscale */
 	  switch (head->image_type) {
 	  case IMAGE_INDEXED:
 	    for (x = tx; x < tx+ox; x++) {
